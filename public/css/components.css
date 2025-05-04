@@ -1,0 +1,255 @@
+/* Buttons, cards, alerts, etc. */
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+
+button {
+  padding: var(--space-sm) var(--space-md);
+  background-color: var(--color-primary);
+  color: var(--color-bg); /* instead of white */
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+button:hover {
+  background-color: var(--color-primary-hover, #855e10); /* fallback */
+}
+
+.container .main-nav li{
+  margin-left: 2rem;
+}
+
+.container #themeToggleBtn{
+  margin-right: 1.5rem;
+  align-items: center;
+}
+
+.card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  background-color: var(--color-bg-alt);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin: auto;
+  border-radius: 8px;
+}
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.carousel-track p,
+.carousel-track h3{
+  padding-top: 10px;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  box-sizing: border-box;
+  padding: 1rem;
+  text-align: left;
+}
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  border: none;
+  color: white;
+  padding: 0.5rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.carousel-api {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  gap: var(--space-md);
+}
+
+.carousel-img {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-img img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+
+.carousel-text {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--space-md);
+  color: white;
+  overflow: hidden;
+  border-radius: var(--ra);
+  z-index: 1;
+}
+
+.carousel-text::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #00000081;
+  background-image: inherit;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: blur(6px);
+  transform: scale(1.1);
+  z-index: -2;
+}
+
+.carousel-text::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.897); /* darken layer */
+  z-index: -1;
+}
+
+.carousel-text h3,
+.carousel-text p {
+  margin: 0 0 var(--space-sm) 0;
+  z-index: 2;
+}
+
+.carousel-text ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  max-width: 40vh;
+}
+
+.carousel-text li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* spacing between icon and text */
+  font-size: var(--font-sm); /* or whatever size fits */
+  color: white;
+}
+
+.carousel-text li img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+/* End of Carousel styles */
+
+
+
+/* Trending styles */
+.trending-cards {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;              /* space between items */
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 1rem 0;
+  scroll-snap-type: x mandatory; /* optional for smooth snap */
+}
+
+
+.trending-api {
+  flex-shrink: 0;
+  display: flex;
+  flex: 0 0 auto;
+  width: calc(10rem + 3rem); /* match image + title box */
+  flex-direction: row; /* horizontal layout */
+  background: #111;
+  border-radius: 4px;
+  align-items: stretch;
+  border-radius: 4px;
+  overflow: hidden;
+  scroll-snap-align: start;
+}
+
+.trending-cards,
+.trending-api {
+  white-space: nowrap;
+}
+
+#main .trending-api img {
+  height: 15rem;
+  width: 10rem;
+  object-fit: cover;
+}
+
+.trending-api .title-box {
+  height: 15rem;
+  width: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0.25rem;
+  background-color: #222;
+  color: white;
+}
+
+.trending-api .title-box h3 {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  white-space: nowrap;
+  font-size: 0.875rem;
+  margin: 0 0 0.5rem 0; /* small gap between title and index */
+  max-height: 12rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+.trending-api .title-box h1 {
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+.trending-cards::-webkit-scrollbar {
+  display: none;
+}
+.trending-cards {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
+/* top airing */
+.top-airing-api ul{
+  max-width: 20vw;
+  list-style-type: none;
+}
+
+.top-airing-api li img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}

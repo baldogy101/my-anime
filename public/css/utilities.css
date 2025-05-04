@@ -1,0 +1,19 @@
+/* Utility classes */
+
+.text-center { text-align: center; }
+.text-muted { color: var(--color-muted); }
+
+.mt-1 { margin-top: var(--space-sm); }
+.mt-2 { margin-top: var(--space-md); }
+
+.p-1 { padding: var(--space-sm); }
+.p-2 { padding: var(--space-md); }
+
+.d-flex { display: flex; }
+.flex-col { flex-direction: column; }
+.justify-center { justify-content: center; }
+.j-space-between { justify-content: space-between; }
+.align-center { align-items: center; }
+
+.rounded-sm { border-radius: var(--radius-sm); }
+.rounded-md { border-radius: var(--radius-md); }

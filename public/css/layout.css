@@ -1,0 +1,39 @@
+#header{
+  background-color: var(--color-bg-alt);
+  max-width: 100vw;
+  padding-top: 20px;
+  padding-bottom: 10px; 
+  padding-left: 10px;
+}
+
+#header .main-nav{
+  max-width: 50vw;
+}
+
+#header .main-nav ul{
+  list-style-type: none;
+}
+
+#header .main-nav a:link,
+#header .main-nav a:visited{
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: bold;
+}
+
+#header .main-nav a:hover{
+  color: gold;
+}
+
+#main{
+  min-height: 70vh;
+}
+
+#footer{
+  margin-top: 2rem;
+}
+
+.ads{
+  border: 1px solid white;
+  min-height: 10vh;
+}
